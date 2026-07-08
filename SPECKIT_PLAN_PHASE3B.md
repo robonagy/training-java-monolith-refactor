@@ -174,6 +174,23 @@ Exit criteria:
 - No runtime traffic depends on retired legacy module implementations.
 - Full regression suite and smoke suite pass.
 
+## Phase 6: Deployment Readiness and Release Automation
+
+Goal:
+- Convert deployment specification into executable, versioned delivery artifacts without performing live deployments.
+
+Tasks:
+1. Create CI pipeline definitions implementing build/test/scan and release packaging from [DEPLOYMENT_SPEC_PHASE4.md](DEPLOYMENT_SPEC_PHASE4.md).
+2. Create IaC module skeletons and environment overlays (`dev`, `staging`, `prod`) aligned to phase-3 target platform.
+3. Define secrets/config schemas and observability wiring manifests as code.
+4. Create promotion gate checklists and rollback runbook artifacts.
+5. Create module traffic-shift configuration templates for strangler cutovers.
+
+Exit criteria:
+- Required deployment artifact families exist in-repo and pass lint/validation checks.
+- A fresh environment can be provisioned from IaC artifacts in dry-run/plan mode.
+- Cutover/rollback procedures are fully documented and referenced by promotion gates.
+
 ## Decision Gates (Ambiguity Stops)
 
 Implementation must pause and request business decision when encountering unresolved questions from rediscovery, including:
@@ -210,6 +227,7 @@ Mitigation pattern:
 4. M3: Billing module cutover complete with rollback path. Status: complete.
 5. M4: Remaining module loops completed in sequence. Status: pending.
 6. M5: Legacy paths retired and modernization baseline established. Status: pending.
+7. M6: Deployment automation artifacts ready for environment bootstrap and controlled module cutovers. Status: in progress (deployment specification complete; executable CI/IaC artifacts pending).
 
 ## Immediate Next Steps
 
@@ -218,3 +236,4 @@ Mitigation pattern:
 3. Resolve reporting authority decision workflow.
 4. Produce reporting module rewrite specification after decision closure.
 5. Resolve weekend policy decision workflow for time-entry loop.
+6. Materialize deployment artifact set from [DEPLOYMENT_SPEC_PHASE4.md](DEPLOYMENT_SPEC_PHASE4.md) (CI, IaC, config/secrets, observability, promotion, rollback, traffic-shift templates).
