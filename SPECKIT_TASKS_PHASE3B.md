@@ -25,7 +25,7 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0008 | DONE | Add billing boundary contract tests for maps/messages/decimal totals | T-0007 | Tests fail on intentional behavior drift and pass on baseline |
 | T-0009 | DONE | Add regression tests for known legacy quirks in billing scope | T-0008 | Quirk tests codified with explicit expected outputs |
 | T-0010 | DONE | Implement rewritten billing module behind legacy-identical interface | T-0009 | Public signatures and payload key shapes match legacy contract |
-| T-0011 | TODO | Add dual-run comparison path for legacy vs rewritten billing in non-prod | T-0010 | Diff output available for all billing acceptance scenarios |
+| T-0011 | DONE | Add dual-run comparison path for legacy vs rewritten billing in non-prod | T-0010 | Diff output available for all billing acceptance scenarios |
 | T-0012 | TODO | Resolve any billing parity mismatches found in dual-run | T-0011 | No mismatches remain for billing acceptance suite |
 | T-0013 | TODO | Cut over traffic to rewritten billing module with rollback switch retained | T-0012 | Billing path switched; rollback mechanism validated |
 | T-0014 | TODO | Create reporting module rewrite spec (FR -> AT -> BR) | T-0013 | MODULE_REWRITE_PHASE3B_REPORTING.md exists and traceable |
@@ -94,4 +94,4 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 2. T-0003 Record local runbook commands for this workspace.
 3. T-0005 Recreate phase-3 target architecture artifact with explicit module boundaries.
 4. T-0006 Confirm loop-1 billing spec is current and aligned with latest baseline.
-5. T-0011 Add dual-run comparison path for legacy vs rewritten billing in non-prod.
+5. T-0012 Resolve any billing parity mismatches found in dual-run.
