@@ -19,14 +19,36 @@ Primary source of truth:
 
 ## Current Baseline and Readiness
 
-- Available baseline artifact:
+- Available baseline artifacts:
   - [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
-- Known environment blocker:
-  - Gradle test execution is currently blocked by invalid JAVA_HOME on this machine.
+  - [SUBSTITUTION_AUDIT_PHASE1.md](SUBSTITUTION_AUDIT_PHASE1.md)
+  - [SPECKIT_TASKS_PHASE3B.md](SPECKIT_TASKS_PHASE3B.md)
+- Current implementation baseline:
+  - Billing compatibility boundary introduced in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingContract.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingContract.java)
+  - Delegating module adapter introduced in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/LegacyCompatibleBillingModule.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/LegacyCompatibleBillingModule.java)
+  - Billing contract tests added in [src/test/java/com/sourcegraph/demo/bigbadmonolith/service/BillingServiceContractTest.java](src/test/java/com/sourcegraph/demo/bigbadmonolith/service/BillingServiceContractTest.java)
+- Environment state:
+  - Gradle tests pass in-session when JAVA_HOME is set to Java 21.
+  - Machine-level JAVA_HOME persistence is still pending.
 
 Readiness gate R0:
 - JAVA_HOME points to a valid Java 21 installation.
 - Command succeeds: ./gradlew test
+
+Current R0 assessment:
+- Partially satisfied (session-level pass confirmed; machine-level persistence pending).
+
+## Execution Status Snapshot
+
+- Completed:
+  - Phase-1 rediscovery baseline captured.
+  - Phase-2 substitution audit completed.
+  - Billing contract baseline implementation started and verified by tests.
+- In progress:
+  - Environment stabilization finalization (persist JAVA_HOME).
+- Pending high-priority planning artifacts:
+  - TARGET_ARCHITECTURE_PHASE3.md
+  - MODULE_REWRITE_PHASE3B_BILLING.md
 
 ## Work Breakdown Structure
 
@@ -47,12 +69,12 @@ Exit criteria:
 ## Phase 1: Artifact Stabilization (Planning Inputs)
 
 Goal:
-- Recreate/confirm complete planning artifacts required for loop execution.
+- Confirm complete planning artifacts required for loop execution.
 
 Tasks:
-1. Recreate substitution audit from rediscovery evidence.
-2. Recreate target architecture artifact with explicit module boundaries.
-3. Recreate loop-1 billing module rewrite spec with FR -> AT -> BR trace matrix.
+1. Validate substitution audit remains aligned with rediscovery evidence.
+2. Produce target architecture artifact with explicit module boundaries.
+3. Produce loop-1 billing module rewrite spec with FR -> AT -> BR trace matrix.
 
 Deliverables:
 - SUBSTITUTION_AUDIT_PHASE1.md
@@ -172,9 +194,16 @@ Mitigation pattern:
 
 ## Milestone Summary
 
-1. M0: Environment ready and tests runnable.
-2. M1: Planning artifacts restored and aligned.
-3. M2: Billing contract harness complete.
-4. M3: Billing module cutover complete with rollback path.
-5. M4: Remaining module loops completed in sequence.
-6. M5: Legacy paths retired and modernization baseline established.
+1. M0: Environment ready and tests runnable. Status: in progress (session pass complete, machine persistence pending).
+2. M1: Planning artifacts restored and aligned. Status: in progress (substitution audit complete; target architecture and billing rewrite spec pending).
+3. M2: Billing contract harness complete. Status: complete.
+4. M3: Billing module cutover complete with rollback path. Status: pending.
+5. M4: Remaining module loops completed in sequence. Status: pending.
+6. M5: Legacy paths retired and modernization baseline established. Status: pending.
+
+## Immediate Next Steps
+
+1. Persist machine-level JAVA_HOME to Java 21 and reconfirm ./gradlew test without session overrides.
+2. Create [TARGET_ARCHITECTURE_PHASE3.md](TARGET_ARCHITECTURE_PHASE3.md) from rediscovery and substitution-audit evidence.
+3. Create [MODULE_REWRITE_PHASE3B_BILLING.md](MODULE_REWRITE_PHASE3B_BILLING.md) with FR -> AT -> BR traceability.
+4. Implement T-0011 dual-run comparison path for legacy vs rewritten billing.
