@@ -22,11 +22,15 @@ Primary source of truth:
 - Available baseline artifacts:
   - [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
   - [SUBSTITUTION_AUDIT_PHASE1.md](SUBSTITUTION_AUDIT_PHASE1.md)
+  - [TARGET_ARCHITECTURE_PHASE3.md](TARGET_ARCHITECTURE_PHASE3.md)
   - [SPECKIT_TASKS_PHASE3B.md](SPECKIT_TASKS_PHASE3B.md)
 - Current implementation baseline:
   - Billing compatibility boundary introduced in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingContract.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingContract.java)
   - Delegating module adapter introduced in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/LegacyCompatibleBillingModule.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/LegacyCompatibleBillingModule.java)
   - Billing contract tests added in [src/test/java/com/sourcegraph/demo/bigbadmonolith/service/BillingServiceContractTest.java](src/test/java/com/sourcegraph/demo/bigbadmonolith/service/BillingServiceContractTest.java)
+  - Dual-run diffing capability added in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingDualRunComparator.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingDualRunComparator.java)
+  - Dual-run report model added in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingComparisonReport.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingComparisonReport.java)
+  - Dual-run tests added in [src/test/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingDualRunComparatorTest.java](src/test/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingDualRunComparatorTest.java)
 - Environment state:
   - Gradle tests pass in-session when JAVA_HOME is set to Java 21.
   - Machine-level JAVA_HOME persistence is still pending.
@@ -43,11 +47,12 @@ Current R0 assessment:
 - Completed:
   - Phase-1 rediscovery baseline captured.
   - Phase-2 substitution audit completed.
-  - Billing contract baseline implementation started and verified by tests.
+  - Phase-3 target architecture specification completed.
+  - Billing contract baseline implementation completed and verified by tests.
+  - Billing dual-run comparison path completed and verified by tests.
 - In progress:
   - Environment stabilization finalization (persist JAVA_HOME).
 - Pending high-priority planning artifacts:
-  - TARGET_ARCHITECTURE_PHASE3.md
   - MODULE_REWRITE_PHASE3B_BILLING.md
 
 ## Work Breakdown Structure
@@ -73,7 +78,7 @@ Goal:
 
 Tasks:
 1. Validate substitution audit remains aligned with rediscovery evidence.
-2. Produce target architecture artifact with explicit module boundaries.
+2. Validate target architecture artifact remains aligned with rediscovery + substitution audit evidence.
 3. Produce loop-1 billing module rewrite spec with FR -> AT -> BR trace matrix.
 
 Deliverables:
@@ -195,15 +200,15 @@ Mitigation pattern:
 ## Milestone Summary
 
 1. M0: Environment ready and tests runnable. Status: in progress (session pass complete, machine persistence pending).
-2. M1: Planning artifacts restored and aligned. Status: in progress (substitution audit complete; target architecture and billing rewrite spec pending).
+2. M1: Planning artifacts restored and aligned. Status: in progress (substitution audit and target architecture complete; billing rewrite spec pending).
 3. M2: Billing contract harness complete. Status: complete.
-4. M3: Billing module cutover complete with rollback path. Status: pending.
+4. M3: Billing module cutover complete with rollback path. Status: in progress (dual-run comparator complete; parity-resolution and switch gate pending).
 5. M4: Remaining module loops completed in sequence. Status: pending.
 6. M5: Legacy paths retired and modernization baseline established. Status: pending.
 
 ## Immediate Next Steps
 
 1. Persist machine-level JAVA_HOME to Java 21 and reconfirm ./gradlew test without session overrides.
-2. Create [TARGET_ARCHITECTURE_PHASE3.md](TARGET_ARCHITECTURE_PHASE3.md) from rediscovery and substitution-audit evidence.
-3. Create [MODULE_REWRITE_PHASE3B_BILLING.md](MODULE_REWRITE_PHASE3B_BILLING.md) with FR -> AT -> BR traceability.
-4. Implement T-0011 dual-run comparison path for legacy vs rewritten billing.
+2. Create [MODULE_REWRITE_PHASE3B_BILLING.md](MODULE_REWRITE_PHASE3B_BILLING.md) with FR -> AT -> BR traceability.
+3. Run parity-resolution workflow using dual-run outputs for billing acceptance scenarios.
+4. Prepare billing cutover gate criteria and rollback-switch validation evidence.
