@@ -1,0 +1,13 @@
+logs:
+  format: json
+  includeCorrelationId: true
+metrics:
+  enabled: true
+  scrapeInterval: 30s
+traces:
+  enabled: true
+  exporter: otlp
+migrationMetrics:
+  - parity_mismatch_count
+  - legacy_rewritten_route_split
+  - module_cutover_error_rate

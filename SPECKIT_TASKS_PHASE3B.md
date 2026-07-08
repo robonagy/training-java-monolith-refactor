@@ -44,8 +44,9 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0027 | TODO | Implement customer module + parity tests | T-0026 | Customer behavior parity passed |
 | T-0028 | TODO | Remove obsolete adapters and dead legacy paths after full parity | T-0016, T-0019, T-0021, T-0024, T-0027 | No production traffic depends on retired paths |
 | T-0029 | TODO | Run full regression suite and smoke checks before final signoff | T-0028 | All tests pass; no blocker defects |
-| T-0030 | TODO | Publish final modernization runbook and boundary documentation | T-0029 | Docs updated and reviewed |
+| T-0030 | DONE | Publish final modernization runbook and boundary documentation | T-0029 | Deployment and operations runbooks/checklists/templates exist under deployment/ |
 | T-0031 | DONE | Specify deployment architecture and operational rollout artifacts | T-0005 | DEPLOYMENT_SPEC_PHASE4.md exists with CI, IaC, secrets/config/observability, promotion, rollback, and strangler traffic-shift definitions |
+| T-0032 | DONE | Materialize executable deployment artifact set from phase-4 specification | T-0031 | CI workflow, Terraform module skeletons, env overlays, config/secret schemas, observability values, promotion/rollback runbooks, and traffic-shift templates exist in repository |
 
 ## Ordered Execution Buckets
 

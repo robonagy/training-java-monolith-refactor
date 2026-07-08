@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigSchema
+metadata:
+  name: app-config-schema
+spec:
+  required:
+    - APP_ENV
+    - JAVA_OPTS
+    - DB_HOST
+    - DB_PORT
+    - DB_NAME
+    - BILLING_MODE
+  allowedBillingModes:
+    - legacy
+    - rewritten

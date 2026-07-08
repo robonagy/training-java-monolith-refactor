@@ -1,0 +1,4 @@
+environment = "dev"
+namespace   = "bbm-dev"
+app_image   = "ghcr.io/example/big-bad-monolith:sha-REPLACE"
+billing_mode = "legacy"

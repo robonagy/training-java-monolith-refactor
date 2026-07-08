@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ModuleTrafficShift
+metadata:
+  name: billing-shift
+spec:
+  module: billing
+  modeKey: BILLING_MODE
+  steps:
+    - phase: baseline
+      legacyPercent: 100
+      rewrittenPercent: 0
+    - phase: shadow
+      legacyPercent: 100
+      rewrittenPercent: 0
+      dualRun: true
+    - phase: canary
+      legacyPercent: 90
+      rewrittenPercent: 10
+    - phase: ramp-1
+      legacyPercent: 50
+      rewrittenPercent: 50
+    - phase: ramp-2
+      legacyPercent: 10
+      rewrittenPercent: 90
+    - phase: full
+      legacyPercent: 0
+      rewrittenPercent: 100
+  rollback:
+    enabled: true
+    action:
+      setMode: legacy
