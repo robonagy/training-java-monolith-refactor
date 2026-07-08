@@ -34,7 +34,7 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0017 | TODO | Create time-entry module rewrite spec (FR -> AT -> BR) | T-0016 | MODULE_REWRITE_PHASE3B_TIME_ENTRY.md exists and traceable |
 | T-0018 | BLOCKED | Resolve weekend policy decision (warning-only vs rejection) | T-0017 | Decision record approved and linked to task output |
 | T-0019 | TODO | Implement time-entry module + parity tests | T-0018 | Time-entry behavior parity passed |
-| T-0020 | TODO | Create category/pricing module rewrite spec (FR -> AT -> BR) | T-0019 | MODULE_REWRITE_PHASE3B_CATEGORY_PRICING.md exists and traceable |
+| T-0020 | DONE | Create category/pricing module rewrite spec (FR -> AT -> BR) | T-0019 | MODULE_REWRITE_PHASE3B_CATEGORY_PRICING.md exists and traceable |
 | T-0021 | TODO | Implement category/pricing module + parity tests | T-0020 | Category/pricing behavior parity passed |
 | T-0022 | TODO | Create user module rewrite spec (FR -> AT -> BR) | T-0021 | MODULE_REWRITE_PHASE3B_USER.md exists and traceable |
 | T-0023 | BLOCKED | Resolve user name/email swap intent decision | T-0022 | Decision record approved and linked to task output |
