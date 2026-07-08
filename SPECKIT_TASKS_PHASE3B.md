@@ -45,7 +45,7 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0028 | TODO | Remove obsolete adapters and dead legacy paths after full parity | T-0016, T-0019, T-0021, T-0024, T-0027 | No production traffic depends on retired paths |
 | T-0029 | TODO | Run full regression suite and smoke checks before final signoff | T-0028 | All tests pass; no blocker defects |
 | T-0030 | TODO | Publish final modernization runbook and boundary documentation | T-0029 | Docs updated and reviewed |
-| T-0031 | DONE | Specify deployment architecture and operational rollout artifacts | T-0005, T-0030 | DEPLOYMENT_SPEC_PHASE4.md exists with CI, IaC, secrets/config/observability, promotion, rollback, and strangler traffic-shift definitions |
+| T-0031 | DONE | Specify deployment architecture and operational rollout artifacts | T-0005 | DEPLOYMENT_SPEC_PHASE4.md exists with CI, IaC, secrets/config/observability, promotion, rollback, and strangler traffic-shift definitions |
 
 ## Ordered Execution Buckets
 

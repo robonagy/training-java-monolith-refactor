@@ -23,6 +23,7 @@ Primary source of truth:
   - [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
   - [SUBSTITUTION_AUDIT_PHASE1.md](SUBSTITUTION_AUDIT_PHASE1.md)
   - [TARGET_ARCHITECTURE_PHASE3.md](TARGET_ARCHITECTURE_PHASE3.md)
+  - [DEPLOYMENT_SPEC_PHASE4.md](DEPLOYMENT_SPEC_PHASE4.md)
   - [SPECKIT_TASKS_PHASE3B.md](SPECKIT_TASKS_PHASE3B.md)
 - Current implementation baseline:
   - Billing compatibility boundary introduced in [src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingContract.java](src/main/java/com/sourcegraph/demo/bigbadmonolith/service/billing/BillingContract.java)
@@ -50,6 +51,7 @@ Current R0 assessment:
   - Phase-3 target architecture specification completed.
   - Billing module rewrite specification completed.
   - Category/Pricing module rewrite specification completed.
+  - Deployment specification completed.
   - Billing contract baseline implementation completed and verified by tests.
   - Billing dual-run comparison path completed and verified by tests.
   - Billing parity-resolution workflow completed and verified by tests.
