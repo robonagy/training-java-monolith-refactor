@@ -18,7 +18,7 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0001 | IN_PROGRESS | Fix JAVA_HOME to valid Java 21 installation path on workspace machine | None | Session-level JAVA_HOME confirmed and stable machine-level configuration pending |
 | T-0002 | DONE | Re-run baseline tests with Gradle wrapper | T-0001 | .\\gradlew.bat test exits 0 |
 | T-0003 | TODO | Record local runbook commands for this workspace (build/test/liberty start) | T-0002 | Commands documented and reproducible locally |
-| T-0004 | TODO | Recreate phase-2 substitution audit artifact from rediscovery evidence | T-0002 | SUBSTITUTION_AUDIT_PHASE1.md exists and maps substitutions to rediscovery behavior |
+| T-0004 | DONE | Recreate phase-2 substitution audit artifact from rediscovery evidence | T-0002 | SUBSTITUTION_AUDIT_PHASE1.md exists and maps substitutions to rediscovery behavior |
 | T-0005 | TODO | Recreate phase-3 target architecture artifact with explicit module boundaries | T-0004 | TARGET_ARCHITECTURE_PHASE3.md exists and includes boundary definitions + trace matrix |
 | T-0006 | TODO | Confirm loop-1 billing spec is current and aligned with latest baseline | T-0005 | MODULE_REWRITE_PHASE3B_BILLING.md exists and includes FR -> AT -> BR mapping |
 | T-0007 | DONE | Build billing contract test fixtures (customer/category/hour scenarios) | T-0006 | Fixture set covers BR-01..BR-06 behavior variants |
@@ -92,6 +92,6 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 
 1. T-0001 Finalize machine-level JAVA_HOME to Java 21.
 2. T-0003 Record local runbook commands for this workspace.
-3. T-0011 Add dual-run comparison path for legacy vs rewritten billing in non-prod.
-4. T-0012 Resolve any billing parity mismatches found in dual-run.
-5. T-0013 Cut over traffic to rewritten billing module with rollback switch retained.
+3. T-0005 Recreate phase-3 target architecture artifact with explicit module boundaries.
+4. T-0006 Confirm loop-1 billing spec is current and aligned with latest baseline.
+5. T-0011 Add dual-run comparison path for legacy vs rewritten billing in non-prod.
