@@ -205,7 +205,7 @@ Mitigation pattern:
 1. M0: Environment ready and tests runnable. Status: in progress (session pass complete, machine persistence pending).
 2. M1: Planning artifacts restored and aligned. Status: complete.
 3. M2: Billing contract harness complete. Status: complete.
-4. M3: Billing module cutover complete with rollback path. Status: in progress (dual-run comparator and parity-resolution complete; switch gate pending).
+4. M3: Billing module cutover complete with rollback path. Status: complete.
 5. M4: Remaining module loops completed in sequence. Status: pending.
 6. M5: Legacy paths retired and modernization baseline established. Status: pending.
 
@@ -213,6 +213,6 @@ Mitigation pattern:
 
 1. Persist machine-level JAVA_HOME to Java 21 and reconfirm ./gradlew test without session overrides.
 2. Record local runbook commands for this workspace (build/test/liberty start).
-3. Prepare billing cutover gate criteria and rollback-switch validation evidence.
-4. Execute billing traffic-switch validation with rollback proof.
-5. Proceed to next blocked module loop precondition: reporting authority decision workflow.
+3. Resolve reporting authority decision workflow.
+4. Produce reporting module rewrite specification after decision closure.
+5. Resolve weekend policy decision workflow for time-entry loop.

@@ -27,7 +27,7 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0010 | DONE | Implement rewritten billing module behind legacy-identical interface | T-0009 | Public signatures and payload key shapes match legacy contract |
 | T-0011 | DONE | Add dual-run comparison path for legacy vs rewritten billing in non-prod | T-0010 | Diff output available for all billing acceptance scenarios |
 | T-0012 | DONE | Resolve any billing parity mismatches found in dual-run | T-0011 | No mismatches remain for billing acceptance suite |
-| T-0013 | TODO | Cut over traffic to rewritten billing module with rollback switch retained | T-0012 | Billing path switched; rollback mechanism validated |
+| T-0013 | DONE | Cut over traffic to rewritten billing module with rollback switch retained | T-0012 | Billing traffic switch service added and rollback mechanism validated by tests |
 | T-0014 | TODO | Create reporting module rewrite spec (FR -> AT -> BR) | T-0015 | MODULE_REWRITE_PHASE3B_REPORTING.md exists and traceable |
 | T-0015 | BLOCKED | Resolve reporting authority decision (service logic vs reports.jsp SQL) | T-0013 | Decision record approved and linked to task output |
 | T-0016 | TODO | Implement reporting module behind legacy-compatible boundary | T-0015 | Reporting contract parity achieved in tests |
@@ -92,6 +92,6 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 
 1. T-0001 Finalize machine-level JAVA_HOME to Java 21.
 2. T-0003 Record local runbook commands for this workspace.
-3. T-0013 Cut over traffic to rewritten billing module with rollback switch retained.
-4. T-0015 Resolve reporting authority decision (service logic vs reports.jsp SQL).
-5. T-0014 Create reporting module rewrite spec (FR -> AT -> BR).
+3. T-0015 Resolve reporting authority decision (service logic vs reports.jsp SQL).
+4. T-0014 Create reporting module rewrite spec (FR -> AT -> BR).
+5. T-0018 Resolve weekend policy decision (warning-only vs rejection).
