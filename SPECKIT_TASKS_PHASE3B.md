@@ -88,10 +88,14 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | D-03 | Reporting implementation scope | Should monthly reporting keep fixed day-31 behavior or use true month-end? | [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md#L313) |
 | D-04 | T-0023 | Is users.jsp name/email constructor order intentional or defect? | [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md#L317) |
 
+## Current Artifact Gaps
+
+1. MODULE_REWRITE_PHASE3B_BILLING.md is currently missing from workspace and must be restored to close T-0006.
+
 ## Immediate Next 5 Tasks
 
 1. T-0001 Finalize machine-level JAVA_HOME to Java 21.
-2. T-0003 Record local runbook commands for this workspace.
-3. T-0006 Confirm loop-1 billing spec is current and aligned with latest baseline.
+2. T-0006 Confirm loop-1 billing spec is current and aligned with latest baseline.
+3. T-0003 Record local runbook commands for this workspace.
 4. T-0012 Resolve any billing parity mismatches found in dual-run.
 5. T-0013 Cut over traffic to rewritten billing module with rollback switch retained.
