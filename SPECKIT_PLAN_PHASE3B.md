@@ -48,12 +48,15 @@ Current R0 assessment:
   - Phase-1 rediscovery baseline captured.
   - Phase-2 substitution audit completed.
   - Phase-3 target architecture specification completed.
+  - Billing module rewrite specification completed.
+  - Category/Pricing module rewrite specification completed.
   - Billing contract baseline implementation completed and verified by tests.
   - Billing dual-run comparison path completed and verified by tests.
+  - Billing parity-resolution workflow completed and verified by tests.
 - In progress:
   - Environment stabilization finalization (persist JAVA_HOME).
 - Pending high-priority planning artifacts:
-  - MODULE_REWRITE_PHASE3B_BILLING.md
+  - None.
 
 ## Work Breakdown Structure
 
@@ -200,15 +203,16 @@ Mitigation pattern:
 ## Milestone Summary
 
 1. M0: Environment ready and tests runnable. Status: in progress (session pass complete, machine persistence pending).
-2. M1: Planning artifacts restored and aligned. Status: in progress (substitution audit and target architecture complete; billing rewrite spec pending).
+2. M1: Planning artifacts restored and aligned. Status: complete.
 3. M2: Billing contract harness complete. Status: complete.
-4. M3: Billing module cutover complete with rollback path. Status: in progress (dual-run comparator complete; parity-resolution and switch gate pending).
+4. M3: Billing module cutover complete with rollback path. Status: in progress (dual-run comparator and parity-resolution complete; switch gate pending).
 5. M4: Remaining module loops completed in sequence. Status: pending.
 6. M5: Legacy paths retired and modernization baseline established. Status: pending.
 
 ## Immediate Next Steps
 
 1. Persist machine-level JAVA_HOME to Java 21 and reconfirm ./gradlew test without session overrides.
-2. Create [MODULE_REWRITE_PHASE3B_BILLING.md](MODULE_REWRITE_PHASE3B_BILLING.md) with FR -> AT -> BR traceability.
-3. Run parity-resolution workflow using dual-run outputs for billing acceptance scenarios.
-4. Prepare billing cutover gate criteria and rollback-switch validation evidence.
+2. Record local runbook commands for this workspace (build/test/liberty start).
+3. Prepare billing cutover gate criteria and rollback-switch validation evidence.
+4. Execute billing traffic-switch validation with rollback proof.
+5. Proceed to next blocked module loop precondition: reporting authority decision workflow.
