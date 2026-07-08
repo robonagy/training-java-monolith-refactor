@@ -28,16 +28,16 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 | T-0011 | DONE | Add dual-run comparison path for legacy vs rewritten billing in non-prod | T-0010 | Diff output available for all billing acceptance scenarios |
 | T-0012 | DONE | Resolve any billing parity mismatches found in dual-run | T-0011 | No mismatches remain for billing acceptance suite |
 | T-0013 | TODO | Cut over traffic to rewritten billing module with rollback switch retained | T-0012 | Billing path switched; rollback mechanism validated |
-| T-0014 | TODO | Create reporting module rewrite spec (FR -> AT -> BR) | T-0013 | MODULE_REWRITE_PHASE3B_REPORTING.md exists and traceable |
-| T-0015 | BLOCKED | Resolve reporting authority decision (service logic vs reports.jsp SQL) | T-0014 | Decision record approved and linked to task output |
+| T-0014 | TODO | Create reporting module rewrite spec (FR -> AT -> BR) | T-0015 | MODULE_REWRITE_PHASE3B_REPORTING.md exists and traceable |
+| T-0015 | BLOCKED | Resolve reporting authority decision (service logic vs reports.jsp SQL) | T-0013 | Decision record approved and linked to task output |
 | T-0016 | TODO | Implement reporting module behind legacy-compatible boundary | T-0015 | Reporting contract parity achieved in tests |
-| T-0017 | TODO | Create time-entry module rewrite spec (FR -> AT -> BR) | T-0016 | MODULE_REWRITE_PHASE3B_TIME_ENTRY.md exists and traceable |
-| T-0018 | BLOCKED | Resolve weekend policy decision (warning-only vs rejection) | T-0017 | Decision record approved and linked to task output |
+| T-0017 | TODO | Create time-entry module rewrite spec (FR -> AT -> BR) | T-0018 | MODULE_REWRITE_PHASE3B_TIME_ENTRY.md exists and traceable |
+| T-0018 | BLOCKED | Resolve weekend policy decision (warning-only vs rejection) | T-0016 | Decision record approved and linked to task output |
 | T-0019 | TODO | Implement time-entry module + parity tests | T-0018 | Time-entry behavior parity passed |
 | T-0020 | DONE | Create category/pricing module rewrite spec (FR -> AT -> BR) | T-0019 | MODULE_REWRITE_PHASE3B_CATEGORY_PRICING.md exists and traceable |
 | T-0021 | TODO | Implement category/pricing module + parity tests | T-0020 | Category/pricing behavior parity passed |
-| T-0022 | TODO | Create user module rewrite spec (FR -> AT -> BR) | T-0021 | MODULE_REWRITE_PHASE3B_USER.md exists and traceable |
-| T-0023 | BLOCKED | Resolve user name/email swap intent decision | T-0022 | Decision record approved and linked to task output |
+| T-0022 | TODO | Create user module rewrite spec (FR -> AT -> BR) | T-0023 | MODULE_REWRITE_PHASE3B_USER.md exists and traceable |
+| T-0023 | BLOCKED | Resolve user name/email swap intent decision | T-0021 | Decision record approved and linked to task output |
 | T-0024 | TODO | Implement user module + parity tests | T-0023 | User behavior parity passed |
 | T-0025 | TODO | Create customer module rewrite spec (FR -> AT -> BR) | T-0024 | MODULE_REWRITE_PHASE3B_CUSTOMER.md exists and traceable |
 | T-0026 | TODO | Resolve delete-policy details where FK constraints affect behavior | T-0025 | Decision/behavior confirmed and encoded in tests |
@@ -93,5 +93,5 @@ Primary behavior baseline: [REDISCOVERY_SPEC.md](REDISCOVERY_SPEC.md)
 1. T-0001 Finalize machine-level JAVA_HOME to Java 21.
 2. T-0003 Record local runbook commands for this workspace.
 3. T-0013 Cut over traffic to rewritten billing module with rollback switch retained.
-4. T-0014 Create reporting module rewrite spec (FR -> AT -> BR).
-5. T-0015 Resolve reporting authority decision (service logic vs reports.jsp SQL).
+4. T-0015 Resolve reporting authority decision (service logic vs reports.jsp SQL).
+5. T-0014 Create reporting module rewrite spec (FR -> AT -> BR).
